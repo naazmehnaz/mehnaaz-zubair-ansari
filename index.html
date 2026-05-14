@@ -1,301 +1,881 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mehnaaz Ansari — Tech Lead & Full‑Stack Developer</title>
-  <meta name="description" content="17+ years of software development and tech leadership. .NET, Web API, Azure DevOps, SQL, modern frontend.">
-  <meta name="author" content="Mehnaaz Ansari">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mehnaaz Ansari — Senior .NET Engineer & Tech Lead</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy:    #0D1B2A;
+    --navy2:   #132236;
+    --accent:  #2E86DE;
+    --accent2: #54A0FF;
+    --gold:    #F9A826;
+    --white:   #F0F4F8;
+    --muted:   #8FA3B1;
+    --card:    #162032;
+    --border:  rgba(46,134,222,0.18);
+    --glow:    rgba(46,134,222,0.12);
+  }
 
-  <style>
-    :root{
-      --bg: #0b1020;
-      --card: #11162a;
-      --accent: #5EEAD4;
-      --text: #e6e9f0;
-      --muted: #9aa3b2;
-      --chip: #1b2240;
-      --border: #263050;
-      --link: #93c5fd;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b1020 0%, #0f1630 100%);color:var(--text);font-family:Inter,system-ui,Segoe UI,Arial,sans-serif}
-    a{color:var(--link);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:1100px;margin:0 auto;padding:32px}
-    header{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;margin-bottom:24px}
-    .title h1{margin:0;font-size:2.2rem;letter-spacing:0.3px}
-    .title p{margin:6px 0 0;color:var(--muted)}
-    .contact-row{display:flex;flex-wrap:wrap;gap:14px;color:var(--muted)}
-    .actions{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--chip);border:1px solid var(--border);color:var(--text);padding:10px 14px;border-radius:10px;cursor:pointer}
-    .btn.primary{background:linear-gradient(90deg,#2dd4bf,#60a5fa);color:#0b1020;font-weight:700;border:none}
-    .grid{display:grid;grid-template-columns:1.4fr 1fr;gap:24px}
-    @media (max-width:940px){.grid{grid-template-columns:1fr}}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* Block styling */
-    section{
-      background:radial-gradient(1200px 500px at 0% 0%, rgba(94,234,212,0.06), transparent 60%), var(--card);
-      border:1px solid var(--border);
-      border-radius:16px;padding:20px;margin-bottom:24px;
-      will-change: transform, opacity;
+  html { scroll-behavior: smooth; }
 
-      /* Animation base state */
-      opacity:0;transform:translateY(40px);
-      transition:opacity 0.7s ease-out, transform 0.7s ease-out;
-    }
-    section.visible{opacity:1;transform:translateY(0)}
-    .section-title{display:flex;align-items:center;gap:10px;margin:0 0 12px;font-size:1.05rem;color:var(--accent);letter-spacing:0.2px}
-    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
-    .chip{background:var(--chip);border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:999px;font-size:0.9rem}
-    .list{display:grid;gap:14px}
-    .item h4{margin:0 0 6px;font-size:1rem}
-    .muted{color:var(--muted)}
-    .two-col{columns:2;column-gap:18px}
-    @media (max-width:720px){.two-col{columns:1}}
-    .timeline .role{border-left:2px solid var(--border);padding-left:12px;margin-left:4px;margin-bottom:16px}
-    .role .meta{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:0.95rem}
-    .role ul{margin:8px 0 0;padding-left:18px}
-    .role li{margin:6px 0}
-    footer{margin-top:16px;color:var(--muted);font-size:0.9rem;text-align:center}
-    .divider{height:1px;background:var(--border);margin:16px 0}
-    .badge{font-size:0.85rem;color:var(--muted)}
-    .hero{background:linear-gradient(120deg, rgba(93,234,212,0.12), rgba(147,197,253,0.12));border:1px solid var(--border);border-radius:16px;padding:18px;margin-bottom:24px}
-    .hero strong{color:var(--accent)}
-    .profile-pic img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);margin-bottom:8px}
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    overflow-x: hidden;
+    line-height: 1.7;
+  }
 
-    .print{display:none}
-    @media print{
-      :root{--bg:#fff;--card:#fff;--text:#000;--muted:#444;--border:#ddd;--chip:#f3f5f9}
-      body{background:#fff}
-      .btn, .actions, .hero{display:none !important}
-      .print{display:block}
-      section{break-inside:avoid;opacity:1 !important;transform:none !important}
-    }
-    table{width:100%;border-collapse:collapse;margin-top:10px}
-    th, td{border:1px solid var(--border);padding:10px;text-align:left}
-    th{background:#162040;color:var(--text)}
-  </style>
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 4rem;
+    background: rgba(13,27,42,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    color: var(--accent2);
+    letter-spacing: 0.02em;
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent2); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 8rem 4rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 70% 40%, rgba(46,134,222,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 70%, rgba(249,168,38,0.05) 0%, transparent 60%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(46,134,222,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(46,134,222,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 700px; }
+
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(46,134,222,0.1);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 0.4rem 1rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--accent2);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.8rem;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulse 2s ease infinite;
+  }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--accent2);
+  }
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--muted);
+    font-weight: 300;
+    max-width: 540px;
+    margin-bottom: 2.5rem;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .hero-sub strong { color: var(--white); font-weight: 500; }
+
+  .hero-stats {
+    display: flex; gap: 2.5rem;
+    margin-bottom: 3rem;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+  .stat-item { display: flex; flex-direction: column; }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    color: var(--accent2);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 0.3rem;
+  }
+  .stat-divider {
+    width: 1px;
+    background: var(--border);
+    align-self: stretch;
+  }
+
+  .hero-cta {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.85rem 2rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: all 0.25s;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+    box-shadow: 0 0 30px rgba(46,134,222,0.3);
+  }
+  .btn-primary:hover {
+    background: var(--accent2);
+    box-shadow: 0 0 40px rgba(84,160,255,0.4);
+    transform: translateY(-2px);
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid var(--border);
+  }
+  .btn-outline:hover {
+    border-color: var(--accent2);
+    color: var(--accent2);
+    transform: translateY(-2px);
+  }
+
+  .hero-photo-area {
+    position: absolute;
+    right: 6rem; top: 50%;
+    transform: translateY(-50%);
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+  .photo-frame {
+    width: 260px; height: 300px;
+    border-radius: 16px;
+    border: 2px solid var(--border);
+    background: var(--card);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 0.8rem;
+    color: var(--muted);
+    font-size: 0.82rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .photo-frame::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(46,134,222,0.05) 0%, transparent 60%);
+  }
+  .photo-icon { font-size: 3rem; opacity: 0.3; }
+  .photo-hint {
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-align: center;
+    padding: 0 1.5rem;
+    line-height: 1.5;
+  }
+  .photo-frame-glow {
+    position: absolute;
+    width: 300px; height: 350px;
+    background: radial-gradient(ellipse, rgba(46,134,222,0.15) 0%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 6rem 4rem; position: relative; z-index: 1; }
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+  }
+  .section-intro {
+    color: var(--muted);
+    max-width: 560px;
+    font-weight: 300;
+    margin-bottom: 3.5rem;
+    font-size: 1.05rem;
+  }
+
+  /* ── SKILLS ── */
+  #skills { background: var(--navy2); }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.2rem;
+  }
+  .skill-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+  .skill-card:hover { border-color: rgba(46,134,222,0.4); transform: translateY(-3px); }
+  .skill-card:hover::before { opacity: 1; }
+  .skill-card-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent2);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+  .skill-tags {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+  }
+  .skill-tag {
+    background: rgba(46,134,222,0.08);
+    border: 1px solid rgba(46,134,222,0.15);
+    border-radius: 6px;
+    padding: 0.25rem 0.65rem;
+    font-size: 0.78rem;
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  /* ── EXPERIENCE ── */
+  .timeline { position: relative; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 8px; bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, var(--accent) 0%, transparent 100%);
+  }
+  .timeline-item {
+    padding-left: 2.5rem;
+    padding-bottom: 3rem;
+    position: relative;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -5px; top: 8px;
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--navy);
+    box-shadow: 0 0 12px rgba(46,134,222,0.5);
+  }
+  .timeline-period {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    margin-bottom: 0.4rem;
+  }
+  .timeline-role {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    color: var(--white);
+    margin-bottom: 0.2rem;
+  }
+  .timeline-company {
+    font-size: 0.88rem;
+    color: var(--accent2);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .timeline-points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .timeline-points li {
+    font-size: 0.9rem;
+    color: var(--muted);
+    padding-left: 1.2rem;
+    position: relative;
+    line-height: 1.6;
+  }
+  .timeline-points li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.7rem;
+    top: 0.25rem;
+  }
+
+  /* ── PROJECTS ── */
+  #projects { background: var(--navy2); }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 2rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .project-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--gold));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .project-card:hover { border-color: rgba(46,134,222,0.35); transform: translateY(-4px); }
+  .project-card:hover::after { transform: scaleX(1); }
+  .project-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.25rem;
+    margin-bottom: 0.3rem;
+    color: var(--white);
+  }
+  .project-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent2);
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+  }
+  .project-desc {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 1.2rem;
+  }
+  .project-tech {
+    display: flex; flex-wrap: wrap; gap: 0.4rem;
+  }
+  .project-tech span {
+    font-size: 0.72rem;
+    background: rgba(249,168,38,0.08);
+    border: 1px solid rgba(249,168,38,0.2);
+    color: var(--gold);
+    border-radius: 5px;
+    padding: 0.2rem 0.55rem;
+    font-weight: 500;
+  }
+
+  /* ── CERTIFICATIONS ── */
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.2rem;
+  }
+  .cert-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.4rem 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.25s;
+  }
+  .cert-card:hover { border-color: rgba(46,134,222,0.4); transform: translateX(4px); }
+  .cert-icon {
+    width: 42px; height: 42px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .cert-icon.earned { background: rgba(46,134,222,0.12); }
+  .cert-icon.planned { background: rgba(249,168,38,0.1); }
+  .cert-info { flex: 1; }
+  .cert-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.15rem;
+  }
+  .cert-status {
+    font-size: 0.72rem;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.06em;
+  }
+  .cert-status.earned { color: var(--accent2); }
+  .cert-status.planned { color: var(--gold); }
+  .cert-status.inprogress { color: #2ecc71; }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--navy2);
+    text-align: center;
+  }
+  .contact-inner { max-width: 600px; margin: 0 auto; }
+  .contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+  .contact-item {
+    display: flex; align-items: center; gap: 0.6rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.85rem 1.4rem;
+    font-size: 0.88rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: all 0.25s;
+  }
+  .contact-item:hover {
+    border-color: var(--accent2);
+    color: var(--accent2);
+    transform: translateY(-2px);
+  }
+  .contact-item span { font-size: 1.1rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 2.5rem 4rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.5rem; }
+    .hero { padding: 7rem 1.5rem 4rem; }
+    .hero-photo-area { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .hero-stats { gap: 1.5rem; }
+    footer { padding: 2rem 1.5rem; }
+  }
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    h1 { font-size: 2.2rem; }
+  }
+</style>
 </head>
 <body>
-  <div class="container">
-    <header>
-  <div class="title">
-    <div class="profile-pic"><img src="placeholder.jpg" alt="Mehnaaz Ansari"></div>
-    <h1>Mehnaaz Ansari</h1>
-    <p class="badge">Tech Lead & Full‑Stack Developer • 17+ years of delivery across BPO and IT services</p>
-    <div class="contact-row">
-      <span>📧 <a href="mailto:naazzanhem@gmail.com">naazzanhem@gmail.com</a></span>
-      <span>☎️ <a href="tel:+918850193567">+91 88501 93567</a></span>
-      <span>🔗 <a href="https://linkedin.com/in/mehnaaz-ansari-905bb42b" target="_blank" rel="noopener">LinkedIn</a></span>
-      <span>🌐 <a href="https://naazmehnaz.github.io/mehnaaz-zubair-ansari/" target="_blank" rel="noopener">GitHub Pages Resume</a></span>
-      <span class="muted">Married • Female • DOB: 15 Apr 1983</span>
-    </div>
-  </div>
-  <div class="actions">
-    <button class="btn primary" onclick="window.print()">Download / Print PDF</button>
-    <button class="btn" onclick="copyLink()">Copy Resume URL</button>
-    <button class="btn" onclick="copyEmail()">Copy Email</button>
-  </div>
-</header>
 
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Mehnaaz Ansari</div>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-    <!-- Make hero a section so it reveals too -->
-    <section class="hero">
-      <p><strong>Objective:</strong> Seeking challenging roles in modern technologies. Quick learner with proven Tech Lead experience and strong team management skills.</p>
-    </section>
-
-    <div class="grid">
-      <!-- Left column -->
-      <div>
-        <section>
-          <h3 class="section-title">Professional summary</h3>
-          <div class="list">
-            <div class="item"><h4>Experience breadth</h4><p class="muted">17+ years in software design and development across BPO and IT services with a strong focus on reliability and standards.</p></div>
-            <div class="item"><h4>Architecture alignment</h4><p class="muted">Skilled in maintaining systems aligned with architectural standards and collaborating with managers and architects on technical solutions.</p></div>
-            <div class="item"><h4>Team leadership</h4><p class="muted">3+ years leading high‑performing sprint teams, stakeholder coordination, prototyping, and guiding teams through SDLC phases.</p></div>
-             <div class="item"><h4>AI Tools</h4><p class="muted">The use of AI tools (Claude, Amazon Q and Copilot. ) in code development has significantly improved efficiency and shortened delivery timelines.</p></div>
-          
-          </div>
-	  
-          <div class="chips">
-            <span class="chip">.NET Core</span><span class="chip">Web API</span><span class="chip">Entity Framework</span>
-            <span class="chip">Azure DevOps</span><span class="chip">SQL Server</span><span class="chip">PostgreSQL</span>
-            <span class="chip">KnockoutJS</span><span class="chip">AngularJS</span><span class="chip">CI/CD</span>
-            <span class="chip">Claude</span><span class="chip">AmazonQ</span><span class="chip">Copilot</span>
-          </div>
-        </section>
-
-        <section>
-          <h3 class="section-title">Leadership skills</h3>
-          <div class="two-col">
-            <p>Led sprint teams for 3+ years with minimal delays; mentored teams to boost productivity and skills.</p>
-            <p>Conducted code reviews ensuring efficiency and compliance with standards; groomed and analyzed user stories with teams.</p>
-            <p>Coordinated issue resolution and delivered stakeholder demos; managed branching strategies in Bitbucket.</p>
-            <p>Handled deployments via Azure DevOps CI/CD; reliable team player under tight deadlines.</p>
-          </div>
-        </section>
-
-        <section>
-          <h3 class="section-title">Work experience</h3>
-          <div class="timeline">
-            <div class="role">
-              <div class="meta"><strong>Gov2Biz — Full Stack Developer</strong><span>Jan 2025 – Present</span></div>
-              <ul>
-                <li>Developing and enhancing web applications, troubleshooting and bug fixes.</li>
-                <li>Built bill payment portal with authentication/authorization.</li>
-		<li>Used Claude for development which speedup the development procees with effeciency</li>
-		<li>AI Tools: Claude and Copilot</li>
-                <li class="muted">Stack: .NET Core, ASP.NET, Web API, C#, EF, HTML, JS, CSS, MVC, LINQ, MSSQL, PostgreSQL.</li>
-              </ul>
-            </div>
-            <div class="role">
-              <div class="meta"><strong>Concentrix — Sr. Software Engineer / Tech Lead</strong><span>Jan 2018 – Dec 2024</span></div>
-              <ul>
-                <li>Led sprint teams for 4+ years; managed EPICs and HR/performance data projects.</li>
-                <li>Prototyped, coordinated stakeholders, ensured timely delivery; CI/CD via Azure DevOps.</li>
-                <li class="muted">Stack: ASP.NET, Web API, C#, EF, HTML, JS, KnockoutJS, CSS, MVC, LINQ, MSSQL.</li>
-              </ul>
-            </div>
-            <div class="role">
-              <div class="meta"><strong>Convergys — Software Engineer</strong><span>Jan 2016 – Dec 2017</span></div>
-              <ul>
-                <li>Developed applications with MVC, Web Services, MSSQL.</li>
-                <li>Integrated AngularJS, NodeJS, NPM with ASP.NET Core.</li>
-                <li class="muted">Stack: ASP.NET Core, MVC, C#, AngularJS, NodeJS, MSSQL.</li>
-              </ul>
-            </div>
-            <div class="role">
-              <div class="meta"><strong>Stream Global Services — Sr. Software Engineer</strong><span>Feb 2008 – Dec 2015</span></div>
-              <ul>
-                <li>Built Windows and web‑based applications; designed server‑side libraries and modules.</li>
-                <li class="muted">Stack: VB.NET, XML, HTML, CSS, MSSQL.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h3 class="section-title">Key projects</h3>
-          <div class="two-col">
-            <p><strong>Lia:</strong> AI‑powered utility bill payment portal.</p>
-            <p><strong>AMCO:</strong> Licensing application with integrations and bug fixes.</p>
-            <p><strong>Pulse:</strong> Agile‑based performance management on Azure + SQL Server.</p>
-            <p><strong>e‑Coaching:</strong> Employee coaching analytics tool.</p>
-            <p><strong>SHIP:</strong> Desktop HR application + self‑service web portal.</p>
-            <p><strong>ImportOracleHRMS:</strong> Automated sync from PeopleSoft HRMS to MSSQL.</p>
-            <p><strong>ImportExportLibrary:</strong> Server‑to‑server employee metrics transfer.</p>
-            <p><strong>Stargazer:</strong> Real‑time call data visualization.</p>
-          </div>
-        </section>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Available for Senior Roles · Remote</div>
+    <h1>Senior .NET Engineer<br/>&amp; <em>Tech Lead</em></h1>
+    <p class="hero-sub">
+      <strong>17+ years</strong> building enterprise software on the Microsoft stack.
+      Azure DevOps ownership, Agile team leadership, and a track record of
+      delivering complex platforms at scale.
+    </p>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">17+</span>
+        <span class="stat-label">Years Experience</span>
       </div>
-
-      <!-- Right column -->
-      <div>
-        <section>
-          <h3 class="section-title">Management skills</h3>
-          <ul>
-            <li>Translated business needs into accurate development estimates.</li>
-            <li>Identified and mitigated risks to protect timelines.</li>
-            <li>Coordinated with QA and delivery teams for smooth releases.</li>
-            <li>Proficient in JIRA and Confluence for tracking and collaboration.</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3 class="section-title">Technical stack</h3>
-          <table>
-            <tr><th>Programming Languages</th><td>C#, VB.Net, Visual Basic</td></tr>
-            <tr><th>Microsoft Stack</th><td>ASP.NET, MVC, Web API, WCF, Entity Framework, AJAX, jQuery, VB Script, LINQ, Web Forms, Windows Forms</td></tr>
-            <tr><th>Frontend</th><td>Bootstrap, HTML, CSS3, JSON</td></tr>
-            <tr><th>JavaScript Frameworks</th><td>AngularJS, KnockoutJS, TypeScript, Node.js</td></tr>
-            <tr><th>Tools</th><td>Node, NPM, JIRA, CI/CD</td></tr>
-            <tr><th>Version Control</th><td>TortoiseSVN, SourceGear Vault, Bitbucket</td></tr>
-            <tr><th>Methodologies</th><td>Waterfall, Agile</td></tr>
-            <tr><th>Database</th><td>SQL, Excel, Oracle, Postgres</td></tr>
-	    <tr><th>AI Tools</th><td>Claude, Amazon Q and Copilot</td></tr>
-            <tr><th>Practicing</th><td>Azure Web Services, Azure Database, Azure Data Factories, Azure DevOps, React JS, Python, ASP .NET Core, AngularJS, KnockoutJS, Generative AI</td></tr>
-          </table>
-        </section>
-
-        <section>
-          <h3 class="section-title">Education</h3>
-          <ul>
-            <li><strong>B.Com (Commerce)</strong>, Mumbai University — 2006</li>
-            <li><strong>SSC</strong>, St. Joseph’s High School — 2001</li>
-          </ul>
-          <div class="divider"></div>
-          <h3 class="section-title">Certifications</h3>
-          <ul>
-            <li>.NET Certificate — NIIT</li>
-            <li>Oracle 9i SQL Certificate</li>
-          </ul>
-        </section>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">500+</span>
+        <span class="stat-label">Platform Users</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">2</span>
+        <span class="stat-label">Sprint Spillovers in 3+ Yrs</span>
       </div>
     </div>
-
-    <footer>
-      <div class="muted print">Mehnaaz Ansari — Tech Lead & Full‑Stack Developer</div>
-      <p>© <span id="year"></span> Mehnaaz Ansari · Built with HTML & CSS · <span class="muted">Last updated: Nov 2025</span></p>
-    </footer>
+    <div class="hero-cta">
+      <a href="mailto:naazzanhem@gmail.com" class="btn btn-primary">✉ Get In Touch</a>
+      <a href="https://linkedin.com/in/mehnaaz-ansari-905bb42b" target="_blank" class="btn btn-outline">🔗 LinkedIn Profile</a>
+    </div>
   </div>
 
-  <script>
-    // Reveal sections with IntersectionObserver + scroll fallback
-    (function(){
-      const sections = document.querySelectorAll('section');
+  <div class="hero-photo-area">
+    <div class="photo-frame-glow"></div>
+    <div class="photo-frame">
+      <div class="photo-icon">📷</div>
+      <p class="photo-hint">Replace this with your photo by editing the HTML</p>
+    </div>
+  </div>
+</section>
 
-      function markVisible(sec){
-        if(!sec.classList.contains('visible')) sec.classList.add('visible');
-      }
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">// Technical Expertise</div>
+  <h2>Skills & Stack</h2>
+  <p class="section-intro">Enterprise-grade expertise across the full Microsoft stack, cloud infrastructure, and Agile delivery.</p>
+  <div class="skills-grid">
+    <div class="skill-card fade-in">
+      <div class="skill-card-label">Core Stack</div>
+      <div class="skill-tags">
+        <span class="skill-tag">C#</span>
+        <span class="skill-tag">ASP.NET Core</span>
+        <span class="skill-tag">MVC</span>
+        <span class="skill-tag">Web API</span>
+        <span class="skill-tag">Entity Framework</span>
+        <span class="skill-tag">LINQ</span>
+        <span class="skill-tag">WCF</span>
+      </div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-card-label">Cloud & DevOps</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Azure DevOps</span>
+        <span class="skill-tag">CI/CD Pipelines</span>
+        <span class="skill-tag">Azure App Services</span>
+        <span class="skill-tag">Azure Data Factory</span>
+        <span class="skill-tag">Bitbucket</span>
+      </div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-card-label">Frontend</div>
+      <div class="skill-tags">
+        <span class="skill-tag">AngularJS</span>
+        <span class="skill-tag">KnockoutJS</span>
+        <span class="skill-tag">React JS</span>
+        <span class="skill-tag">TypeScript</span>
+        <span class="skill-tag">Bootstrap</span>
+        <span class="skill-tag">HTML5</span>
+        <span class="skill-tag">CSS3</span>
+      </div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-card-label">Database</div>
+      <div class="skill-tags">
+        <span class="skill-tag">MS SQL Server</span>
+        <span class="skill-tag">PostgreSQL</span>
+        <span class="skill-tag">Oracle</span>
+        <span class="skill-tag">PeopleSoft HRMS</span>
+      </div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-card-label">Architecture</div>
+      <div class="skill-tags">
+        <span class="skill-tag">REST APIs</span>
+        <span class="skill-tag">SOA</span>
+        <span class="skill-tag">Multi-tier</span>
+        <span class="skill-tag">Microservices</span>
+        <span class="skill-tag">SOLID Principles</span>
+      </div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-card-label">Leadership & Tools</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Agile / Scrum</span>
+        <span class="skill-tag">JIRA</span>
+        <span class="skill-tag">Confluence</span>
+        <span class="skill-tag">Code Review</span>
+        <span class="skill-tag">Sprint Planning</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-      function manualReveal(){
-        const triggerBottom = window.innerHeight * 0.9;
-        sections.forEach(sec=>{
-          const top = sec.getBoundingClientRect().top;
-          if(top < triggerBottom) markVisible(sec);
-        });
-      }
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">// Career Timeline</div>
+  <h2>Work Experience</h2>
+  <p class="section-intro">17+ years delivering enterprise software across global organisations.</p>
+  <div class="timeline">
 
-      if('IntersectionObserver' in window){
-        const observer = new IntersectionObserver((entries)=>{
-          entries.forEach(entry=>{
-            if(entry.isIntersecting){
-              markVisible(entry.target);
-              observer.unobserve(entry.target);
-            }
-          });
-        }, {root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.15});
+    <div class="timeline-item fade-in">
+      <div class="timeline-period">Jan 2025 — Present</div>
+      <div class="timeline-role">Full-Stack .NET Engineer</div>
+      <div class="timeline-company">Gov2Biz</div>
+      <ul class="timeline-points">
+        <li>Building a citizen-facing bill payment portal with secure OAuth Authentication & Authorisation flows.</li>
+        <li>Delivering full-stack solutions using .NET Core, ASP.NET, C#, Entity Framework, MVC, LINQ, MSSQL & PostgreSQL.</li>
+        <li>Owning bug triage, root-cause analysis, and hotfix deployments to maintain high production availability.</li>
+      </ul>
+    </div>
 
-        sections.forEach(sec=>observer.observe(sec));
-        // Ensure above-the-fold sections are revealed immediately
-        window.addEventListener('load', manualReveal);
-      } else {
-        // Fallback for older browsers
-        window.addEventListener('scroll', manualReveal);
-        window.addEventListener('load', manualReveal);
-        manualReveal();
-      }
-    })();
+    <div class="timeline-item fade-in">
+      <div class="timeline-period">Jan 2018 — Dec 2024</div>
+      <div class="timeline-role">Tech Lead / Senior Software Engineer</div>
+      <div class="timeline-company">Concentrix — Global Enterprise (300,000+ employees)</div>
+      <ul class="timeline-points">
+        <li>Led an Agile sprint team for 4+ years — achieving just 2 spillovers across the entire tenure.</li>
+        <li>Architected PULSE: an Azure-hosted enterprise performance management platform serving 500+ users globally.</li>
+        <li>Owned end-to-end Azure CI/CD pipeline — branching strategy, automated builds, zero-downtime deployments.</li>
+        <li>Enforced engineering excellence through code reviews, architectural standards, and team mentoring.</li>
+        <li>Managed complex EPICs and large-scale PeopleSoft HRMS → SQL data integration pipelines.</li>
+      </ul>
+    </div>
 
-    function copyLink(){
-      const url = window.location.href;
-      if(navigator.clipboard){
-        navigator.clipboard.writeText(url).then(()=>alert('Resume URL copied to clipboard!'));
-      } else {
-        prompt('Copy this URL:', url);
+    <div class="timeline-item fade-in">
+      <div class="timeline-period">Jan 2016 — Dec 2017</div>
+      <div class="timeline-role">Software Engineer</div>
+      <div class="timeline-company">Convergys (Now Concentrix)</div>
+      <ul class="timeline-points">
+        <li>Modernised a legacy ASP.NET application by integrating AngularJS, Node.js, and NPM.</li>
+        <li>Built and maintained MVC web applications with MSSQL backends through full SDLC.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item fade-in">
+      <div class="timeline-period">Feb 2008 — Dec 2015</div>
+      <div class="timeline-role">Senior Software Engineer</div>
+      <div class="timeline-company">Stream Global Services (Now Conduent)</div>
+      <ul class="timeline-points">
+        <li>Developed enterprise workforce management systems (desktop and web) using VB.Net, HTML, CSS, and MSSQL.</li>
+        <li>Built real-time call data aggregation and visualisation services for global reporting platforms.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">// Featured Work</div>
+  <h2>Key Projects</h2>
+  <p class="section-intro">Enterprise platforms built for real organisations, at real scale.</p>
+  <div class="projects-grid">
+
+    <div class="project-card fade-in">
+      <div class="project-name">PULSE</div>
+      <div class="project-sub">Enterprise Performance & Quality Platform · Concentrix</div>
+      <p class="project-desc">Azure-hosted, Agile-delivered enterprise platform integrating real-time KPI dashboards, quality audit workflows, and coaching modules. Serves 500+ users across global operations.</p>
+      <div class="project-tech">
+        <span>ASP.NET Core</span><span>C#</span><span>Azure DevOps</span>
+        <span>KnockoutJS</span><span>MSSQL</span><span>CI/CD</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-name">LIA</div>
+      <div class="project-sub">AI-Powered Bill Payment Portal · Gov2Biz</div>
+      <p class="project-desc">Citizen-facing transactional web application with AI-powered routing, secure OAuth auth flows, admin dashboards, and multi-site configuration for utility bill payments.</p>
+      <div class="project-tech">
+        <span>.NET Core</span><span>Web API</span><span>PostgreSQL</span>
+        <span>MVC</span><span>Entity Framework</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-name">ImportOracleHRMS</div>
+      <div class="project-sub">Automated HR Data Integration · PeopleSoft → MSSQL</div>
+      <p class="project-desc">Scheduled background service pulling, validating, and syncing thousands of employee records from PeopleSoft HRMS into internal SQL databases — ensuring data accuracy across HR platforms.</p>
+      <div class="project-tech">
+        <span>C#</span><span>PeopleSoft</span><span>MSSQL</span><span>Scheduled Services</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-name">Stargazer</div>
+      <div class="project-sub">Real-Time Call Analytics Dashboard · Stream Global</div>
+      <p class="project-desc">Live call monitoring platform aggregating and displaying multi-site data streams on a unified dashboard — used by both internal operations and external clients.</p>
+      <div class="project-tech">
+        <span>VB.Net</span><span>MSSQL</span><span>HTML</span><span>CSS</span><span>Real-time Data</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-label">// Credentials & Growth</div>
+  <h2>Certifications</h2>
+  <p class="section-intro">Earned credentials and the learning roadmap ahead.</p>
+  <div class="cert-grid">
+    <div class="cert-card fade-in">
+      <div class="cert-icon earned">🎓</div>
+      <div class="cert-info">
+        <div class="cert-name">Microsoft .NET Certificate</div>
+        <div class="cert-status earned">✔ Earned · NIIT</div>
+      </div>
+    </div>
+    <div class="cert-card fade-in">
+      <div class="cert-icon earned">🎓</div>
+      <div class="cert-info">
+        <div class="cert-name">Oracle 9i SQL Certification</div>
+        <div class="cert-status earned">✔ Earned</div>
+      </div>
+    </div>
+    <div class="cert-card fade-in">
+      <div class="cert-icon earned">🎓</div>
+      <div class="cert-info">
+        <div class="cert-name">B.Com · Mumbai University</div>
+        <div class="cert-status earned">✔ Graduated 2006</div>
+      </div>
+    </div>
+    <div class="cert-card fade-in">
+      <div class="cert-icon planned">🔄</div>
+      <div class="cert-info">
+        <div class="cert-name">React JS — Advanced</div>
+        <div class="cert-status inprogress">⟳ In Progress</div>
+      </div>
+    </div>
+    <div class="cert-card fade-in">
+      <div class="cert-icon planned">🎯</div>
+      <div class="cert-info">
+        <div class="cert-name">AZ-204: Azure Developer Associate</div>
+        <div class="cert-status planned">◎ Planned 2026</div>
+      </div>
+    </div>
+    <div class="cert-card fade-in">
+      <div class="cert-icon planned">🎯</div>
+      <div class="cert-info">
+        <div class="cert-name">Microservices with .NET & Docker</div>
+        <div class="cert-status planned">◎ Planned 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="section-label">// Let's Connect</div>
+    <h2>Get In Touch</h2>
+    <p class="section-intro" style="margin: 0 auto 0;">
+      Open to Senior .NET Engineer and Tech Lead roles at product companies, GCCs, and enterprise software organisations. Remote or Mumbai-based.
+    </p>
+    <div class="contact-grid">
+      <a href="mailto:naazzanhem@gmail.com" class="contact-item">
+        <span>✉</span> naazzanhem@gmail.com
+      </a>
+      <a href="tel:+918850193567" class="contact-item">
+        <span>📞</span> +91 88501 93567
+      </a>
+      <a href="https://linkedin.com/in/mehnaaz-ansari-905bb42b" target="_blank" class="contact-item">
+        <span>🔗</span> LinkedIn Profile
+      </a>
+      <div class="contact-item">
+        <span>📍</span> Mumbai, India
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Mehnaaz Ansari · Senior .NET Engineer & Tech Lead · Mumbai, India</p>
+</footer>
+
+<script>
+  // Scroll-triggered fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
       }
-    }
-    function copyEmail(){
-      const email = 'naazzanhem@gmail.com';
-      if(navigator.clipboard){
-        navigator.clipboard.writeText(email).then(()=>alert('Email copied to clipboard!'));
-      } else {
-        prompt('Copy this email:', email);
-      }
-    }
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
